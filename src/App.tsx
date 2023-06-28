@@ -24,12 +24,11 @@ export default function App() {
         setNewItem("")
     }
 
-    console.log(todos)
-
     function toggleTodo(id: string, completed: boolean) {
         setTodos((currentTodos : Todo[]) => {
             return currentTodos.map( todo => {
                     if (todo.id === id) {
+                        console.log("click")
                         return { ...todo, completed }
                     }
                     return todo
@@ -56,7 +55,7 @@ export default function App() {
                 {todos.map(todo => {
                     return <li key={todo.id}>
                         <label>
-                            <input type={"checkbox"} checked={todo.completed}
+                            <input type={"checkbox"} checked={!todo.completed}
                             onChange={e => toggleTodo(
                                 todo.id, e.target.checked
                             )}
