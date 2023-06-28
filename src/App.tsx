@@ -55,7 +55,7 @@ export default function App() {
                 {todos.map(todo => {
                     return <li key={todo.id}>
                         <label>
-                            <input type={"checkbox"} checked={!todo.completed}
+                            <input type={"checkbox"} checked={todo.completed}
                             onChange={e => toggleTodo(
                                 todo.id, e.target.checked
                             )}
